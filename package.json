@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "gulp-concat": "^2.6.1"
+  },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "cz-customizable": "^6.2.0",
