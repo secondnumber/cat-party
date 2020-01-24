@@ -7,3 +7,28 @@ body {
   background-color: $background-deepgreen;
   overflow: hidden;
 }
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 600px;
+  border: 1px solid red;
+}
+
+.image-container {
+  flex-grow: 1;
+  border: 1px solid green;
+}
+
+.caption-container {
+  height: 50px;
+  border: 1px solid blue;
+}
