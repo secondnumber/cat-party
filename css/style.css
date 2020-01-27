@@ -20,6 +20,7 @@ body {
   border: 1px solid red; }
 
 .image-container {
+  position: relative;
   flex-grow: 1;
   border: 1px solid green; }
 
@@ -27,12 +28,65 @@ body {
   height: 50px;
   border: 1px solid blue; }
 
-.sky-container2 {
-  width: 100%;
+.ball-first, .ball-second, .ball-third {
   position: absolute;
-  -webkit-animation: starry-sky 5s linear infinite;
-  top: 10px;
-  left: 230px; }
+  width: 140px;
+  height: 110px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 5px #5d4f46; }
+
+.ball-first::after, .ball-second::after, .ball-third::after {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 5px #5d4f46;
+  top: 105px;
+  left: 65px; }
+
+.ball-first::before, .ball-second::before, .ball-third::before {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 200px;
+  background: #5d4f46;
+  top: 105px; }
+
+.ball-first {
+  top: 80px;
+  left: 40px;
+  background: #abd8ce;
+  transform: rotate(-10deg); }
+  .ball-first::after {
+    background: #abd8ce; }
+  .ball-first::before {
+    left: 120px;
+    transform: rotate(-30deg); }
+
+.ball-second {
+  z-index: 2;
+  top: 20px;
+  left: 130px;
+  background: #f7a1c3; }
+  .ball-second::after {
+    background: #f7a1c3; }
+  .ball-second::before {
+    left: 72px; }
+
+.ball-third {
+  top: 100px;
+  left: 230px;
+  background: #fddb8b;
+  transform: rotate(20deg); }
+  .ball-third::after {
+    top: 100px;
+    left: 50px;
+    background: #fddb8b; }
+  .ball-third::before {
+    left: 30px;
+    transform: rotate(15deg); }
 
 @font-face {
   font-family: 'Caveat', cursive;
