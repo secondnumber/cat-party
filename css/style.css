@@ -28,6 +28,66 @@ body {
   height: 50px;
   border: 1px solid blue; }
 
+.pusheen-body {
+  position: absolute;
+  background: #b5a89b;
+  border-radius: 50%/60% 60% 40% 40%; }
+
+.pusheen-eyes, .pusheen-eyes::before {
+  position: absolute;
+  z-index: 4;
+  width: 9px;
+  height: 9px;
+  background: #5d4f46;
+  border-radius: 50%; }
+
+.pusheen-body {
+  z-index: 3;
+  top: 280px;
+  left: 110px;
+  width: 160px;
+  height: 200px;
+  box-shadow: 0px 0px 0px 5px #5d4f46;
+  transform: rotate(-42deg); }
+
+.pusheen-eyes {
+  top: 340px;
+  left: 120px; }
+  .pusheen-eyes::before {
+    content: '';
+    top: -30px;
+    left: 30px; }
+
+.pusheen-nose {
+  z-index: 3; }
+
+.pusheen-mouth {
+  z-index: 3; }
+
+.pusheen-left-moustache {
+  z-index: 3; }
+
+.pusheen-right-moustache {
+  z-index: 3; }
+
+.pusheen-head-stain {
+  z-index: 3; }
+
+.pusheen-left-ear {
+  z-index: 3; }
+
+.pusheen-right-ear {
+  z-index: 3; }
+
+.pusheen-front-paw {
+  z-index: 3; }
+
+.pusheen-hind-paw {
+  z-index: 3; }
+
+.pusheen-tail {
+  z-index: 3; }
+
 .ball-first, .ball-second, .ball-third {
   position: absolute;
   width: 140px;
