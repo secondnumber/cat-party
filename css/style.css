@@ -16,17 +16,14 @@ body {
   display: flex;
   flex-direction: column;
   width: 400px;
-  height: 600px;
-  border: 1px solid red; }
+  height: 600px; }
 
 .image-container {
   position: relative;
-  flex-grow: 1;
-  border: 1px solid green; }
+  flex-grow: 1; }
 
 .caption-container {
-  height: 50px;
-  border: 1px solid blue; }
+  height: 50px; }
 
 .pusheen-body {
   position: absolute;
@@ -41,28 +38,77 @@ body {
   background: #5d4f46;
   border-radius: 50%; }
 
+.pusheen-front-paw, .pusheen-front-paw::after, .pusheen-hind-paw, .pusheen-hind-paw::before {
+  position: absolute;
+  z-index: 5;
+  width: 13px;
+  height: 20px;
+  background: #b5a89b;
+  border-radius: 50%/60% 60% 40% 40%;
+  box-shadow: 0px 3px 0px 2px #5d4f46; }
+
+.pusheen-left-ear::after, .pusheen-left-ear::before, .pusheen-right-ear::after, .pusheen-right-ear::before {
+  position: absolute;
+  z-index: 8;
+  width: 5px;
+  height: 40px;
+  background: #5d4f46; }
+
+.pusheen-nose, .pusheen-nose::after, .pusheen-nose::before {
+  position: absolute;
+  z-index: 6;
+  background: #5d4f46;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px; }
+
 .pusheen-body {
   z-index: 3;
-  top: 280px;
-  left: 110px;
+  top: 300px;
+  left: 90px;
   width: 160px;
   height: 200px;
   box-shadow: 0px 0px 0px 5px #5d4f46;
   transform: rotate(-42deg); }
 
 .pusheen-eyes {
-  top: 340px;
-  left: 120px; }
+  top: 350px;
+  left: 100px; }
   .pusheen-eyes::before {
     content: '';
     top: -30px;
-    left: 30px; }
+    left: 35px; }
 
 .pusheen-nose {
-  z-index: 3; }
+  top: 338px;
+  left: 122px;
+  width: 7px;
+  height: 8px;
+  transform: rotate(-40deg); }
+  .pusheen-nose::after {
+    content: '';
+    top: 3px;
+    left: -8px;
+    width: 7px;
+    height: 10px;
+    transform: rotate(-55deg); }
+  .pusheen-nose::before {
+    content: '';
+    top: 3px;
+    left: 8px;
+    width: 7px;
+    height: 10px;
+    transform: rotate(55deg); }
 
 .pusheen-mouth {
-  z-index: 3; }
+  position: absolute;
+  z-index: 5;
+  top: 345px;
+  left: 128px;
+  width: 4px;
+  height: 4px;
+  background: #b5a89b;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 5px #5d4f46; }
 
 .pusheen-left-moustache {
   z-index: 3; }
@@ -74,16 +120,68 @@ body {
   z-index: 3; }
 
 .pusheen-left-ear {
-  z-index: 3; }
+  position: absolute;
+  z-index: 7;
+  top: 271px;
+  left: 105px;
+  border: 20px solid transparent;
+  border-bottom: 30px solid #b5a79a;
+  transform: rotate(-23deg); }
+  .pusheen-left-ear::after {
+    content: '';
+    top: -6px;
+    left: 8px;
+    border-top-right-radius: 5px;
+    transform: rotate(-41deg); }
+  .pusheen-left-ear::before {
+    content: '';
+    height: 25px;
+    top: -4px;
+    left: -11px;
+    border-top-left-radius: 5px;
+    transform: rotate(35deg); }
 
 .pusheen-right-ear {
-  z-index: 3; }
+  position: absolute;
+  z-index: 7;
+  top: 310px;
+  left: 55px;
+  border: 20px solid transparent;
+  border-bottom: 30px solid #b5a79a;
+  transform: rotate(-55deg); }
+  .pusheen-right-ear::after {
+    content: '';
+    height: 29px;
+    top: -6px;
+    left: 5px;
+    border-top-right-radius: 5px;
+    transform: rotate(-38deg); }
+  .pusheen-right-ear::before {
+    content: '';
+    top: -7px;
+    left: -14px;
+    border-top-left-radius: 5px;
+    transform: rotate(35deg); }
 
 .pusheen-front-paw {
-  z-index: 3; }
+  top: 390px;
+  left: 160px;
+  transform: rotate(240deg); }
+  .pusheen-front-paw::after {
+    content: '';
+    top: 70px;
+    left: 50px;
+    transform: rotate(-70deg); }
 
 .pusheen-hind-paw {
-  z-index: 3; }
+  top: 455px;
+  left: 205px;
+  transform: rotate(200deg); }
+  .pusheen-hind-paw::before {
+    content: '';
+    top: 55px;
+    left: -35px;
+    transform: rotate(20deg); }
 
 .pusheen-tail {
   z-index: 3; }
@@ -122,8 +220,8 @@ body {
   .ball-first::after {
     background: #abd8ce; }
   .ball-first::before {
-    left: 120px;
-    transform: rotate(-30deg); }
+    left: 110px;
+    transform: rotate(-20deg); }
 
 .ball-second {
   z-index: 2;
@@ -145,8 +243,8 @@ body {
     left: 50px;
     background: #fddb8b; }
   .ball-third::before {
-    left: 30px;
-    transform: rotate(15deg); }
+    left: 40px;
+    transform: rotate(10deg); }
 
 @font-face {
   font-family: 'Caveat', cursive;
