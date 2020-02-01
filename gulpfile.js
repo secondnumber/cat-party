@@ -6,4 +6,9 @@ gulp.task('sass', function() {
     .src('source/sass/style.scss')
     .pipe(sass())
     .pipe(gulp.dest('css'));
+  done();
+});
+
+gulp.task('watch', function() {
+  gulp.watch('source/**/*.scss', gulp.parallel('sass'));
 });

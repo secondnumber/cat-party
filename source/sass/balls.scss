@@ -39,8 +39,8 @@
   }
   &::before {
     @extend %ball-cord-shared;
-    left: 120px;
-    transform: rotate(-30deg);
+    left: 110px;
+    transform: rotate(-20deg);
   }
 }
 
@@ -74,7 +74,7 @@
   }
   &::before {
     @extend %ball-cord-shared;
-    left: 30px;
-    transform: rotate(15deg);
+    left: 40px;
+    transform: rotate(10deg);
   }
 }
