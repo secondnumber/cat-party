@@ -1,3 +1,27 @@
+@keyframes move-tail {
+  0% {
+    transform: rotate(-10deg); }
+  10% {
+    transform: rotate(-6deg); }
+  20% {
+    transform: rotate(-2deg); }
+  30% {
+    transform: rotate(5deg); }
+  40% {
+    transform: rotate(10deg); }
+  50% {
+    transform: rotate(15deg); }
+  60% {
+    transform: rotate(10deg); }
+  70% {
+    transform: rotate(5deg); }
+  80% {
+    transform: rotate(-2deg); }
+  90% {
+    transform: rotate(-6deg); }
+  100% {
+    transform: rotate(-10deg); } }
+
 * {
   margin: 0;
   padding: 0; }
@@ -27,12 +51,17 @@ body {
 
 .pusheen-body {
   position: absolute;
-  background: #b5a89b;
-  border-radius: 50%/60% 60% 40% 40%; }
+  top: 300px;
+  left: 90px;
+  border-radius: 50%/60% 60% 40% 40%;
+  width: 160px;
+  height: 200px;
+  box-shadow: 0px 0px 0px 5px #5d4f46;
+  transform: rotate(-42deg); }
 
 .pusheen-eyes, .pusheen-eyes::before {
   position: absolute;
-  z-index: 4;
+  z-index: 2;
   width: 9px;
   height: 9px;
   background: #5d4f46;
@@ -40,7 +69,7 @@ body {
 
 .pusheen-front-paw, .pusheen-front-paw::after, .pusheen-hind-paw, .pusheen-hind-paw::before {
   position: absolute;
-  z-index: 5;
+  z-index: 3;
   width: 13px;
   height: 20px;
   background: #b5a89b;
@@ -49,26 +78,71 @@ body {
 
 .pusheen-left-ear::after, .pusheen-left-ear::before, .pusheen-right-ear::after, .pusheen-right-ear::before {
   position: absolute;
-  z-index: 8;
+  z-index: 3;
   width: 5px;
   height: 40px;
   background: #5d4f46; }
 
 .pusheen-nose, .pusheen-nose::after, .pusheen-nose::before {
   position: absolute;
-  z-index: 6;
+  z-index: 2;
   background: #5d4f46;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px; }
 
+.pusheen-body::after, .pusheen-body::before {
+  position: absolute;
+  z-index: 4;
+  width: 20px;
+  height: 20px;
+  background: #716e6a;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px; }
+
+.pusheen-head-stain, .pusheen-head-stain::after, .pusheen-head-stain::before {
+  position: absolute;
+  z-index: 4;
+  width: 9px;
+  height: 10px;
+  background: #716e6a;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px; }
+
+.pusheen-left-moustache, .pusheen-left-moustache::after, .pusheen-right-moustache, .pusheen-right-moustache::after {
+  position: absolute;
+  z-index: 4;
+  width: 4px;
+  height: 30px;
+  background: #5d4f46; }
+
 .pusheen-body {
-  z-index: 3;
-  top: 300px;
-  left: 90px;
-  width: 160px;
-  height: 200px;
-  box-shadow: 0px 0px 0px 5px #5d4f46;
+  z-index: 1;
+  background: #b5a89b; }
+  .pusheen-body::after {
+    content: '';
+    top: 69px;
+    left: 5px;
+    transform: rotate(104deg); }
+  .pusheen-body::before {
+    content: '';
+    top: 100px;
+    left: 0px;
+    transform: rotate(94deg); }
+
+.pusheen-head-stain {
+  top: 329px;
+  left: 97px;
   transform: rotate(-42deg); }
+  .pusheen-head-stain::after {
+    content: '';
+    top: 0px;
+    left: 10px;
+    transform: rotate(4deg); }
+  .pusheen-head-stain::before {
+    content: '';
+    top: 1px;
+    left: 20px;
+    transform: rotate(6deg); }
 
 .pusheen-eyes {
   top: 350px;
@@ -101,7 +175,7 @@ body {
 
 .pusheen-mouth {
   position: absolute;
-  z-index: 5;
+  z-index: 2;
   top: 345px;
   left: 128px;
   width: 4px;
@@ -111,17 +185,28 @@ body {
   box-shadow: 0px 0px 0px 5px #5d4f46; }
 
 .pusheen-left-moustache {
-  z-index: 3; }
+  top: 290px;
+  left: 158px;
+  transform: rotate(35deg); }
+  .pusheen-left-moustache::after {
+    content: '';
+    top: 0px;
+    left: 13px;
+    transform: rotate(15deg); }
 
 .pusheen-right-moustache {
-  z-index: 3; }
-
-.pusheen-head-stain {
-  z-index: 3; }
+  top: 355px;
+  left: 75px;
+  transform: rotate(65deg); }
+  .pusheen-right-moustache::after {
+    content: '';
+    top: 0px;
+    left: 13px;
+    transform: rotate(-15deg); }
 
 .pusheen-left-ear {
   position: absolute;
-  z-index: 7;
+  z-index: 3;
   top: 271px;
   left: 105px;
   border: 20px solid transparent;
@@ -143,7 +228,7 @@ body {
 
 .pusheen-right-ear {
   position: absolute;
-  z-index: 7;
+  z-index: 3;
   top: 310px;
   left: 55px;
   border: 20px solid transparent;
@@ -184,7 +269,16 @@ body {
     transform: rotate(20deg); }
 
 .pusheen-tail {
-  z-index: 3; }
+  position: absolute;
+  z-index: 0;
+  top: 410px;
+  left: 200px;
+  width: 20px;
+  height: 130px;
+  background: repeating-linear-gradient(#b5a79a, #b5a79a 10%, #706d69 10%, #706d69 20%);
+  border-radius: 40% 40% 40% 40%;
+  box-shadow: 0px 5px 0px 5px #5e5047;
+  animation: move-tail 2s linear infinite; }
 
 .ball-first, .ball-second, .ball-third {
   position: absolute;
