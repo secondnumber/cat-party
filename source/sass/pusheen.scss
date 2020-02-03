@@ -1,12 +1,17 @@
 %pusheen-body-shared {
   position: absolute;
-  background: $fill-beige;
+  top: 300px;
+  left: 90px;
   border-radius: 50%/60% 60% 40% 40%;
+  width: 160px;
+  height: 200px;
+  box-shadow: 0px 0px 0px 5px $contour-brown;
+  transform: rotate(-42deg);
 }
 
 %pusheen-eyes-shared {
   position: absolute;
-  z-index: 4;
+  z-index: 2;
   width: 9px;
   height: 9px;
   background: $contour-brown;
@@ -15,7 +20,7 @@
 
 %pusheen-paw-shared {
   position: absolute;
-  z-index: 5;
+  z-index: 3;
   width: 13px;
   height: 20px;
   background: $fill-beige;
@@ -25,7 +30,7 @@
 
 %pusheen-ear-shared {
   position: absolute;
-  z-index: 8;
+  z-index: 3;
   width: 5px;
   height: 40px;
   background: $contour-brown;
@@ -33,21 +38,79 @@
 
 %pusheen-nose-shared {
   position: absolute;
-  z-index: 6;
+  z-index: 2;
   background: $contour-brown;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
 }
 
+%pusheen-body-stain {
+  position: absolute;
+  z-index: 4;
+  width: 20px;
+  height: 20px;
+  background: $stains;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+%pusheen-head-stain {
+  position: absolute;
+  z-index: 4;
+  width: 9px;
+  height: 10px;
+  background: $stains;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+%pusheen-moustache {
+  position: absolute;
+  z-index: 4;
+  width: 4px;
+  height: 30px;
+  background: $contour-brown;
+}
+
 .pusheen-body {
   @extend %pusheen-body-shared;
-  z-index: 3;
-  top: 300px;
-  left: 90px;
-  width: 160px;
-  height: 200px;
-  box-shadow: 0px 0px 0px 5px $contour-brown;
+  z-index: 1;
+  background: $fill-beige;
+  &::after {
+    content: '';
+    @extend %pusheen-body-stain;
+    top: 69px;
+    left: 5px;
+    transform: rotate(104deg);
+  }
+  &::before {
+    content: '';
+    @extend %pusheen-body-stain;
+    top: 100px;
+    left: 0px;
+    transform: rotate(94deg);
+  }
+}
+
+.pusheen-head-stain {
+  @extend %pusheen-head-stain;
+  top: 329px;
+  left: 97px;
   transform: rotate(-42deg);
+  &::after {
+    content: '';
+    @extend %pusheen-head-stain;
+    top: 0px;
+    left: 10px;
+    transform: rotate(4deg);
+  }
+  &::before {
+    content: '';
+    @extend %pusheen-head-stain;
+    top: 1px;
+    left: 20px;
+    transform: rotate(6deg);
+  }
 }
 
 .pusheen-eyes {
@@ -91,7 +154,7 @@
 
 .pusheen-mouth {
   position: absolute;
-  z-index: 5;
+  z-index: 2;
   top: 345px;
   left: 128px;
   width: 4px;
@@ -102,20 +165,36 @@
 }
 
 .pusheen-left-moustache {
-  z-index: 3;
+  @extend %pusheen-moustache;
+  top: 290px;
+  left: 158px;
+  transform: rotate(35deg);
+  &::after {
+    content: '';
+    @extend %pusheen-moustache;
+    top: 0px;
+    left: 13px;
+    transform: rotate(15deg);
+  }
 }
 
 .pusheen-right-moustache {
-  z-index: 3;
-}
-
-.pusheen-head-stain {
-  z-index: 3;
+  @extend %pusheen-moustache;
+  top: 355px;
+  left: 75px;
+  transform: rotate(65deg);
+  &::after {
+    content: '';
+    @extend %pusheen-moustache;
+    top: 0px;
+    left: 13px;
+    transform: rotate(-15deg);
+  }
 }
 
 .pusheen-left-ear {
   position: absolute;
-  z-index: 7;
+  z-index: 3;
   top: 271px;
   left: 105px;
   border: 20px solid transparent;
@@ -142,7 +221,7 @@
 
 .pusheen-right-ear {
   position: absolute;
-  z-index: 7;
+  z-index: 3;
   top: 310px;
   left: 55px;
   border: 20px solid transparent;
@@ -196,5 +275,19 @@
 }
 
 .pusheen-tail {
-  z-index: 3;
+  position: absolute;
+  z-index: 0;
+  top: 410px;
+  left: 200px;
+  width: 20px;
+  height: 130px;
+  background: repeating-linear-gradient(
+    #b5a79a,
+    #b5a79a 10%,
+    #706d69 10%,
+    #706d69 20%
+  );
+  border-radius: 40% 40% 40% 40%;
+  box-shadow: 0px 5px 0px 5px #5e5047;
+  animation: move-tail 2s linear infinite;
 }
