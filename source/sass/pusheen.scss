@@ -282,12 +282,12 @@
   width: 20px;
   height: 130px;
   background: repeating-linear-gradient(
-    #b5a79a,
-    #b5a79a 10%,
-    #706d69 10%,
-    #706d69 20%
+    $fill-beige,
+    $fill-beige 10%,
+    $stains 10%,
+    $stains 20%
   );
   border-radius: 40% 40% 40% 40%;
-  box-shadow: 0px 5px 0px 5px #5e5047;
+  box-shadow: 0px 5px 0px 5px $contour-brown;
   animation: move-tail 2s linear infinite;
 }
