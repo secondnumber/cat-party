@@ -1,7 +1,69 @@
-.sky-container2 {
-  width: 100%;
+%star-shared {
   position: absolute;
-  -webkit-animation: starry-sky 5s linear infinite;
-  top: 10px;
-  left: 230px;
+  top: 50vh;
+  left: 50vw;
+  border-radius: 50%;
+  background-color: $star-white;
+}
+
+@function star($count) {
+  $value: '#{10}px #{10}px #767676';
+  @for $i from 1 through $count {
+    $value: '#{$value},#{random(4000)-2000}px #{random(3000)-1500}px #{hsl(random(255), random(255), random(255))}';
+  }
+  @return unquote($value);
+}
+
+.sky {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+.star-small {
+  @extend %star-shared;
+  width: 4px;
+  height: 4px;
+  box-shadow: star(150);
+  animation: starry-sky 10s 0s linear infinite;
+  &::before {
+    content: '';
+    @extend %star-shared;
+    width: 5px;
+    height: 5px;
+    box-shadow: star(150);
+    animation: starry-sky 20s 5s linear infinite;
+  }
+}
+
+.star-medium {
+  @extend %star-shared;
+  width: 5px;
+  height: 5px;
+  box-shadow: star(100);
+  animation: starry-sky 8s 2s linear infinite;
+  &::before {
+    content: '';
+    @extend %star-shared;
+    width: 6px;
+    height: 6px;
+    box-shadow: star(100);
+    animation: starry-sky 25s 10s linear infinite;
+  }
+}
+
+.star-big {
+  @extend %star-shared;
+  width: 6px;
+  height: 6px;
+  box-shadow: star(50);
+  animation: starry-sky 10s 1s linear infinite;
+  &::before {
+    content: '';
+    @extend %star-shared;
+    width: 7px;
+    height: 7px;
+    box-shadow: star(50);
+    animation: starry-sky 20s 0s linear infinite;
+  }
 }

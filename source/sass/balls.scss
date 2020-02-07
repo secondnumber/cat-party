@@ -1,0 +1,80 @@
+%ball-shared {
+  position: absolute;
+  width: 140px;
+  height: 110px;
+  border-radius: 50%;
+  box-shadow: $contour-ball-brown;
+}
+
+%ball-tail-shared {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  box-shadow: $contour-ball-brown;
+  top: 105px;
+  left: 65px;
+}
+
+%ball-cord-shared {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 200px;
+  background: $text-brown;
+  top: 105px;
+}
+
+.ball-first {
+  @extend %ball-shared;
+  top: 80px;
+  left: 40px;
+  background: $ball-lightgreen;
+  transform: rotate(-10deg);
+  &::after {
+    @extend %ball-tail-shared;
+    background: $ball-lightgreen;
+  }
+  &::before {
+    @extend %ball-cord-shared;
+    left: 110px;
+    transform: rotate(-20deg);
+  }
+}
+
+.ball-second {
+  @extend %ball-shared;
+  z-index: 2;
+  top: 20px;
+  left: 130px;
+  background: $ball-lightpink;
+  &::after {
+    @extend %ball-tail-shared;
+    background: $ball-lightpink;
+  }
+  &::before {
+    @extend %ball-cord-shared;
+    left: 72px;
+  }
+}
+
+.ball-third {
+  @extend %ball-shared;
+  top: 100px;
+  left: 230px;
+  background: $ball-lightyellow;
+  transform: rotate(20deg);
+  &::after {
+    @extend %ball-tail-shared;
+    top: 100px;
+    left: 50px;
+    background: $ball-lightyellow;
+  }
+  &::before {
+    @extend %ball-cord-shared;
+    left: 40px;
+    transform: rotate(10deg);
+  }
+}
