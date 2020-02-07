@@ -1,10 +1,12 @@
 %pusheen-body-shared {
   position: absolute;
+  z-index: 1;
   top: 300px;
   left: 90px;
-  border-radius: 50%/60% 60% 40% 40%;
   width: 160px;
   height: 200px;
+  border-radius: 50%/60% 60% 40% 40%;
+  background: $fill-beige;
   box-shadow: 0px 0px 0px 5px $contour-brown;
   transform: rotate(-42deg);
 }
@@ -39,6 +41,8 @@
 %pusheen-nose-shared {
   position: absolute;
   z-index: 2;
+  width: 7px;
+  height: 10px;
   background: $contour-brown;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
@@ -74,8 +78,6 @@
 
 .pusheen-body {
   @extend %pusheen-body-shared;
-  z-index: 1;
-  background: $fill-beige;
   &::after {
     content: '';
     @extend %pusheen-body-stain;
@@ -129,7 +131,6 @@
   @extend %pusheen-nose-shared;
   top: 338px;
   left: 122px;
-  width: 7px;
   height: 8px;
   transform: rotate(-40deg);
   &::after {
@@ -137,8 +138,6 @@
     @extend %pusheen-nose-shared;
     top: 3px;
     left: -8px;
-    width: 7px;
-    height: 10px;
     transform: rotate(-55deg);
   }
   &::before {
@@ -146,8 +145,6 @@
     @extend %pusheen-nose-shared;
     top: 3px;
     left: 8px;
-    width: 7px;
-    height: 10px;
     transform: rotate(55deg);
   }
 }
@@ -198,7 +195,7 @@
   top: 271px;
   left: 105px;
   border: 20px solid transparent;
-  border-bottom: 30px solid #b5a79a;
+  border-bottom: 30px solid $fill-beige;
   transform: rotate(-23deg);
   &::after {
     content: '';
@@ -225,7 +222,7 @@
   top: 310px;
   left: 55px;
   border: 20px solid transparent;
-  border-bottom: 30px solid #b5a79a;
+  border-bottom: 30px solid $fill-beige;
   transform: rotate(-55deg);
   &::after {
     content: '';
