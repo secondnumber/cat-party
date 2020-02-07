@@ -1,35 +1,15 @@
-@keyframes starry-sky {
-  0% {
-    opacity: 0;
-    transform: translateY(0px);
-  }
-  5% {
-    opacity: 0.8;
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(500px);
-  }
-  90% {
-    opacity: 0.8;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(1000px);
-  }
-}
-
 %star-shared {
   position: absolute;
+  top: 50vh;
+  left: 50vw;
   border-radius: 50%;
   background-color: $star-white;
-  opacity: 0;
 }
 
 @function star($count) {
   $value: '#{10}px #{10}px #767676';
   @for $i from 1 through $count {
-    $value: '#{$value},#{random(2000)}px #{random(1500)}px #767676';
+    $value: '#{$value},#{random(4000)-2000}px #{random(3000)-1500}px #{hsl(random(255), random(255), random(255))}';
   }
   @return unquote($value);
 }
@@ -42,52 +22,48 @@
 
 .star-small {
   @extend %star-shared;
-  width: 3px;
-  height: 3px;
-  box-shadow: star(100);
+  width: 4px;
+  height: 4px;
+  box-shadow: star(150);
   animation: starry-sky 10s 0s linear infinite;
   &::before {
     content: '';
     @extend %star-shared;
-    top: -1000px;
-    width: 3px;
-    height: 3px;
-    box-shadow: star(100);
-    animation: starry-sky 12s 4s linear infinite;
+    width: 5px;
+    height: 5px;
+    box-shadow: star(150);
+    animation: starry-sky 20s 5s linear infinite;
   }
 }
 
 .star-medium {
   @extend %star-shared;
-  width: 4px;
-  height: 4px;
+  width: 5px;
+  height: 5px;
   box-shadow: star(100);
-  animation: starry-sky 12s 0s linear infinite;
+  animation: starry-sky 8s 2s linear infinite;
   &::before {
     content: '';
     @extend %star-shared;
-    top: -1000px;
-    width: 4px;
-    height: 4px;
+    width: 6px;
+    height: 6px;
     box-shadow: star(100);
-    animation: starry-sky 10s 5s linear infinite;
+    animation: starry-sky 25s 10s linear infinite;
   }
 }
 
 .star-big {
   @extend %star-shared;
-  top: -200px;
-  width: 5px;
-  height: 5px;
-  box-shadow: star(100);
-  animation: starry-sky 10s 4s linear infinite;
+  width: 6px;
+  height: 6px;
+  box-shadow: star(50);
+  animation: starry-sky 10s 1s linear infinite;
   &::before {
     content: '';
-    top: -800px;
     @extend %star-shared;
-    width: 6px;
-    height: 6px;
-    box-shadow: star(100);
-    animation: starry-sky 12s 9s linear infinite;
+    width: 7px;
+    height: 7px;
+    box-shadow: star(50);
+    animation: starry-sky 20s 0s linear infinite;
   }
 }
